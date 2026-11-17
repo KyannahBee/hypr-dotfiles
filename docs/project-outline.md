@@ -42,7 +42,7 @@ The live old setup is in `~/dotfiles`; read it there for comparison.
     │   └── assets/
     ├── themes/
     │   └── pixel-castle/        # theme.json + wallpaper.jpg
-    └── docs/
+    └── docs/                  # project-outline.md, cheatsheet.md (keybinds)
 
 ## Phases and GitHub issues
 
@@ -61,8 +61,12 @@ before you close it.
 3. Base config: monitors, input devices, environment variables, autostart
    (polkit, keyring, mpris proxy, quickshell). The clipboard watcher and
    night light move to the Quickshell shell and the phase 2 theme service.
+   Done: commit 7d340c3 (issue #4).
 4. Port the keybinds from `~/dotfiles/sway/config`: apps, workspaces,
-   scratchpad, media keys, screenshots, color picker, lock, reload.
+   media keys, screenshots, color picker, reload. Scratchpad binds are
+   deferred to the special-workspace work; launcher, lock, power menu,
+   and quick menus are deferred to Quickshell (phase 3).
+   Done: commit fd8da71 (issue #5). Full list in docs/cheatsheet.md.
 5. Port window rules: floating dialogs, picture-in-picture, per-app float,
    special workspace assignments.
 6. Modern layer: blur, animations, rounded corners, shadows, dimming.

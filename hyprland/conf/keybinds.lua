@@ -70,8 +70,15 @@ hl.bind(mod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- --- Move workspace to output direction ---
-hl.bind(mod .. " + greater", hl.dsp.exec_raw("moveworkspacetomonitor right"))
-hl.bind(mod .. " + less", hl.dsp.exec_raw("moveworkspacetomonitor left"))
+-- sway runs two commands per key: right+up for greater, left+down for less
+hl.bind(mod .. " + greater", function()
+    hl.dispatch(hl.dsp.exec_raw("moveworkspacetomonitor right"))
+    hl.dispatch(hl.dsp.exec_raw("moveworkspacetomonitor up"))
+end)
+hl.bind(mod .. " + less", function()
+    hl.dispatch(hl.dsp.exec_raw("moveworkspacetomonitor left"))
+    hl.dispatch(hl.dsp.exec_raw("moveworkspacetomonitor down"))
+end)
 
 -- --- Resize by 50px ---
 hl.bind(mod .. " + minus", hl.dsp.exec_raw("resizeactive -50 0"))

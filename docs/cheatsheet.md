@@ -75,7 +75,8 @@ Ported from `~/dotfiles/sway/config`. SUPER is the Windows key (Mod4).
 | --- | --- | --- |
 | SUPER+Arrows | focus window | ported |
 | SUPER+Shift+Arrows | move window | ported |
-| SUPER+Greater / SUPER+Less | move workspace to output right/left | ported |
+| SUPER+Greater | move workspace to output right, then up | ported |
+| SUPER+Less | move workspace to output left, then down | ported |
 | SUPER+Minus / SUPER+Equal | shrink / grow width 50px | ported |
 | SUPER+Shift+F | fullscreen toggle | ported |
 | SUPER+Alt+F | fullscreen global | ported |
