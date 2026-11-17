@@ -67,8 +67,9 @@ before you close it.
    deferred to the special-workspace work; launcher, lock, power menu,
    and quick menus are deferred to Quickshell (phase 3).
    Done: commit fd8da71 (issue #5). Full list in docs/cheatsheet.md.
-5. Port window rules: floating dialogs, picture-in-picture, per-app float,
-   special workspace assignments.
+5. Port window rules: floating dialogs, picture-in-picture, per-app float.
+   Special workspace assignments are deferred (no special workspaces yet).
+   Done: conf/windowrules.lua (issue #6).
 6. Modern layer: blur, animations, rounded corners, shadows, dimming.
 
 ### Phase 2 - theming engine

@@ -8,7 +8,7 @@ require("conf.input")
 require("conf.env")
 require("conf.autostart")
 require("conf.keybinds")
+require("conf.windowrules")
 
 -- Added by later issues:
--- require("conf.windowrules") (issue #6)
 -- require("conf.decoration")  (issue #7)
