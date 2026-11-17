@@ -85,8 +85,10 @@ hl.bind(mod .. " + minus", hl.dsp.exec_raw("resizeactive -50 0"))
 hl.bind(mod .. " + equal", hl.dsp.exec_raw("resizeactive 50 0"))
 
 -- --- Fullscreen / floating / center / close ---
-hl.bind(mod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = 0 }))
-hl.bind(mod .. " + ALT + F", hl.dsp.global("fullscreen"))
+-- no argument to fullscreen toggles it, like sway's "fullscreen toggle"
+hl.bind(mod .. " + SHIFT + F", hl.dsp.window.fullscreen())
+-- sway's "fullscreen toggle global" has no Hyprland equivalent, so
+-- SUPER+Alt+F is dropped instead of binding a dead dispatcher
 hl.bind(mod .. " + ALT + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("CTRL + " .. mod .. " + backslash", hl.dsp.window.center())
 hl.bind(mod .. " + Q", hl.dsp.window.close())
@@ -127,10 +129,10 @@ hl.bind("CTRL + " .. mod .. " + SHIFT + R", hl.dsp.reload_config())
 
 -- --- Resize mode (submap) ---
 hl.define_submap("resize", function()
-    hl.bind("H", hl.dsp.exec_raw("resizeactive -20 0"))
-    hl.bind("L", hl.dsp.exec_raw("resizeactive 20 0"))
-    hl.bind("K", hl.dsp.exec_raw("resizeactive 0 -20"))
-    hl.bind("J", hl.dsp.exec_raw("resizeactive 0 20"))
+    hl.bind("h", hl.dsp.exec_raw("resizeactive -20 0"))
+    hl.bind("l", hl.dsp.exec_raw("resizeactive 20 0"))
+    hl.bind("k", hl.dsp.exec_raw("resizeactive 0 -20"))
+    hl.bind("j", hl.dsp.exec_raw("resizeactive 0 20"))
     hl.bind("Return", hl.dsp.submap("reset"))
     hl.bind("Escape", hl.dsp.submap("reset"))
 end)

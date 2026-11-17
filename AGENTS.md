@@ -35,6 +35,12 @@ the baseline. Read it directly; do not copy it into this repo.
    the user confirms the exact change in chat first.
 7. Update `docs/project-outline.md` when the plan changes. Keep this file
    current.
+8. Known unverified: the `hl.dsp.*` dispatcher names in
+   `hyprland/conf/keybinds.lua` (for example `hl.dsp.focus({ workspace = ... })`,
+   `hl.dsp.window.center()`, `hl.dsp.layout(...)`, `hl.dsp.reload_config()`)
+   are not yet checked against the Hyprland 0.57 Lua API. If `hyprctl reload`
+   reports a config error in that file, check these names first, then confirm
+   the binds with `hyprctl binds`.
 
 ## Theme format
 

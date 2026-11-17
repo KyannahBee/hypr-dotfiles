@@ -79,7 +79,7 @@ Ported from `~/dotfiles/sway/config`. SUPER is the Windows key (Mod4).
 | SUPER+Less | move workspace to output left, then down | ported |
 | SUPER+Minus / SUPER+Equal | shrink / grow width 50px | ported |
 | SUPER+Shift+F | fullscreen toggle | ported |
-| SUPER+Alt+F | fullscreen global | ported |
+| SUPER+Alt+F | fullscreen global | removed: no Hyprland equivalent, old bind was dead |
 | SUPER+Alt+Space | floating toggle | ported |
 | Ctrl+SUPER+Backslash | center window | ported |
 | SUPER+Q | close window | ported |
@@ -89,7 +89,7 @@ Ported from `~/dotfiles/sway/config`. SUPER is the Windows key (Mod4).
 | Ctrl+Alt+Tab | toggle split direction | ported (sway also cycled tabbed; Hyprland dwindle has no tabbed layout) |
 | SUPER+Alt+P | pin (sticky) toggle | ported |
 | Ctrl+SUPER+Shift+R | reload config | ported |
-| SUPER+X, then H/L/K/J | resize mode, 20px steps | ported |
+| SUPER+X, then h/l/k/j | resize mode, 20px steps | ported |
 
 ## Workspaces
 
