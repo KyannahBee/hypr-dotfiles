@@ -1,12 +1,11 @@
 # AGENTS.md - hypr-dotfiles
 
-This repo ports the SwayFX desktop setup to Hyprland + Quickshell. The old
-setup stays frozen in `swayfx-reference/` as the baseline.
+This repo ports the SwayFX desktop setup to Hyprland + Quickshell. The live
+SwayFX config in `~/dotfiles` (sway, waybar, rofi, gtklock, colorschemes) is
+the baseline. Read it directly; do not copy it into this repo.
 
 ## Repo layout
 
-- `swayfx-reference/` - copy of the old SwayFX config (sway, waybar, rofi,
-  gtklock, colorschemes). Do not edit these files.
 - `hyprland/` - Hyprland config. `hyprland.conf` is the entry point and it
   includes the files in `conf/`.
 - `quickshell/` - the Quickshell shell: `shell.qml`, `modules/`, `services/`,
@@ -20,7 +19,8 @@ setup stays frozen in `swayfx-reference/` as the baseline.
 
 1. Write docs, comments, and chat replies in ASD-STE100 plain English: short
    sentences, active voice, no contractions.
-2. Never edit files under `swayfx-reference/`.
+2. Base all porting work on the live config in `~/dotfiles`. Do not copy it
+   into this repo.
 3. Work one GitHub issue at a time. Each issue must be small enough to finish
    and verify in one sitting.
 4. Never hardcode colors in QML or Hyprland files. All colors come from the
@@ -31,7 +31,8 @@ setup stays frozen in `swayfx-reference/` as the baseline.
    - Quickshell: run `qs -c hyprdot` and check the output for QML errors.
    - Write in the issue what you ran and what you saw.
 6. Commit once per issue. Put the issue number in the commit message, for
-   example: `git commit -m "bar: add clock module (#9)"`.
+   example: `git commit -m "bar: add clock module (#9)"`. Do not commit unless
+   the user confirms the exact change in chat first.
 7. Update `docs/project-outline.md` when the plan changes. Keep this file
    current.
 

@@ -22,14 +22,13 @@ layout switching behind a dynamic island and a settings menu.
 | colorschemes/ + switch.sh | theme and wallpaper switching | `themes/<name>/theme.json` plus a theme service |
 | wallpaper.jpg symlink | wallpaper | swww or hyprpaper with transitions |
 
-The old setup is frozen in `swayfx-reference/` for comparison.
+The live old setup is in `~/dotfiles`; read it there for comparison.
 
 ## Target layout
 
     hypr-dotfiles/
     ├── AGENTS.md
     ├── install.sh
-    ├── swayfx-reference/        # frozen copy of the old setup
     ├── hyprland/
     │   ├── hyprland.conf        # entry point, includes conf/*.conf
     │   ├── conf/                # monitors, input, keybinds, windowrules,
@@ -52,7 +51,8 @@ before you close it.
 
 ### Phase 0 - baseline
 
-1. Vendor the SwayFX reference copy into `swayfx-reference/`.
+1. Vendor the SwayFX reference copy into `swayfx-reference/`. Dropped: we
+   read `~/dotfiles` directly instead of keeping a frozen copy.
 2. Repo scaffolding: `AGENTS.md`, this outline, `.gitignore`, `install.sh`
    stub.
 
@@ -60,8 +60,8 @@ before you close it.
 
 3. Base config: monitors, input devices, environment variables, autostart
    (polkit, keyring, clipboard watcher, night light, mpris proxy).
-4. Port the keybinds from the sway config: apps, workspaces, scratchpad,
-   media keys, screenshots, color picker, lock, reload.
+4. Port the keybinds from `~/dotfiles/sway/config`: apps, workspaces,
+   scratchpad, media keys, screenshots, color picker, lock, reload.
 5. Port window rules: floating dialogs, picture-in-picture, per-app float,
    special workspace assignments.
 6. Modern layer: blur, animations, rounded corners, shadows, dimming.
@@ -69,14 +69,14 @@ before you close it.
 ### Phase 2 - theming engine
 
 7. Theme schema (`themes/<name>/theme.json`) and port of the pixel-castle
-   theme as the first theme.
+   theme from `~/dotfiles/colorschemes/pixel-castle/` as the first theme.
 8. Live theme switcher: one command or one click updates Hyprland colors,
    Quickshell palette, kitty, GTK, cursor, and wallpaper without a restart.
 
 ### Phase 3 - Quickshell shell
 
 9. Quickshell scaffold plus top bar: workspaces, window title, clock, tray,
-   system stats (port of the waybar modules).
+   system stats (port of the modules in `~/dotfiles/waybar/config.jsonc`).
 10. Dynamic island: a collapsed pill at the top center that expands on click
     with quick actions (theme, wallpaper, brightness, volume, wifi,
     bluetooth, do not disturb).
