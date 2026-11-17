@@ -33,8 +33,5 @@ for _, t in ipairs(dialog_titles) do
     hl.window_rule({ name = "float-dialog", match = { title = t }, float = true })
 end
 
--- --- Steam friends list ---
-hl.window_rule({ name = "float-steam-friends", match = { class = "^steam$", title = "^Friends List$" }, float = true })
-
 -- --- Picture-in-picture: float + sticky + size + position ---
 hl.window_rule({ name = "pip", match = { title = "^Picture[-( ]in[-( ][Pp]icture" }, float = true, pin = true, size = "30% 30%", move = "69% 67%" })
