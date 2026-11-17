@@ -1,0 +1,98 @@
+/**
+ * shared.rasi — theme for custom script-mode menus
+ * (wifi / bluetooth / volume / brightness)
+ *
+ * Separate from config.rasi (the app-launcher) — do not merge.
+ * Colors come from the active colorscheme (see colorschemes/switch.sh),
+ * the same one config.rasi's pixel-castle.rasi theme uses.
+ *
+ * Usage: rofi -dmenu -theme ~/.config/rofi/shared.rasi @import position/bottom.rasi
+ * (position file imported by each script, not baked in here, so menus can
+ * be top or bottom without duplicating this file)
+ */
+
+@import "colorscheme.rasi"
+
+* {
+    font:               "JetBrains Mono NF 12";
+    text-color:         @text;
+    background-color:   @transparent;
+}
+
+window {
+    transparency:       "real";
+    width:               420px;
+    border:              1px;
+    border-color:        @border-act;
+    border-radius:       6px;
+    background-color:    @bg;
+}
+
+mainbox {
+    background-color:    transparent;
+    children:            [ "inputbar", "message", "listview" ];
+    spacing:              4px;
+    padding:              8px;
+}
+
+inputbar {
+    background-color:    @surface;
+    text-color:           @text;
+    border-radius:        4px;
+    padding:              8px 10px;
+    children:             [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color:           @pink;
+}
+
+entry {
+    placeholder-color:    @subtext;
+    placeholder:          "Type to filter...";
+}
+
+message {
+    background-color:     @surface;
+    text-color:            @subtext;
+    border-radius:         4px;
+    padding:               6px 10px;
+}
+
+listview {
+    background-color:     transparent;
+    lines:                 8;
+    scrollbar:              false;
+    spacing:                2px;
+    cycle:                  true;
+    dynamic:                true;
+}
+
+element {
+    background-color:      transparent;
+    text-color:             @text;
+    border-radius:          4px;
+    padding:                6px 10px;
+}
+
+element selected {
+    background-color:      @surface;
+    text-color:             @pink;
+    border:                 0px 0px 0px 2px;
+    border-color:           @pink;
+}
+
+element-text {
+    background-color:       inherit;
+    text-color:              inherit;
+    vertical-align:          0.5;
+}
+
+error-message {
+    background-color:        @bg;
+    text-color:               @pink;
+    border:                   1px;
+    border-color:             @pink;
+    border-radius:            4px;
+    padding:                  10px;
+}

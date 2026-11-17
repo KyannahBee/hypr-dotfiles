@@ -1,0 +1,219 @@
+/* ============================================================
+   Waybar CSS — structure only; colors come from the active
+   colorscheme (see colorschemes/switch.sh)
+   ============================================================ */
+
+@import url("colorscheme.css");
+
+* {
+    font-family: "JetBrains Mono NF", "Creep2", monospace;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @bg;
+    /*background-color: transparent;*/
+    color: @text;
+    border-bottom: 2px solid @border_in;
+    border: 1px solid @pink;
+}
+
+/* Dividers between sections */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+}
+
+/* ---- Workspaces ---- */
+/*#workspaces {
+    background: @bg;
+    margin: 0;
+    padding: 0 4px;
+    border: 1px solid @pink;
+}*/
+
+#workspaces button {
+    /* Base color is overridden per-number via Pango in config */
+    color: @subtext;
+    background: transparent;
+    padding: 0 8px;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    min-width: 24px;
+}
+
+#workspaces button:hover {
+    background: @surface;
+    color: @text;
+    border-bottom: 2px solid @purple;
+    box-shadow: none;
+}
+
+#workspaces button.focused {
+    color: @text;
+    background: @surface;
+    border-bottom: 2px solid @pink;
+}
+
+#workspaces button.urgent {
+    color: @bg;
+    background: @pink;
+    border-bottom: 2px solid @pink_hi;
+}
+
+/* ---- Mode indicator ---- */
+#mode {
+    background: @pink;
+    color: @bg;
+    padding: 0 10px;
+    font-weight: bold;
+    border: 1px solid @pink_hi;
+}
+
+/* ---- Scratchpad ---- */
+#scratchpad {
+    color: @purple;
+    padding: 0 8px;
+    border: 1px solid @pink;
+}
+
+#scratchpad:hover {
+    color: @purple_hi;
+}
+
+/* ---- Shared module style ---- */
+#workspaces,
+#window,
+#mpris,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#bluetooth,
+#clock,
+#tray {
+    background: @bg;
+    color: @subtext;
+    padding: 0 10px;
+    border-left: 1px solid @surface;
+    /* Pink border on every module */
+    /*border: 1px solid @pink;*/
+    margin: 3px 2px;
+}
+
+/* Hover state for interactive modules */
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover {
+    color: @text;
+    background: @surface;
+}
+
+/* ---- Clock — centered, most prominent ---- */
+/*#clock {
+    color: @stone;
+    background: @bg2;
+    padding: 0 14px;
+    border: 1px solid @pink;
+    margin: 3px 2px;
+}
+
+*/
+
+/* ---- MPRIS (music) ---- */
+#mpris,
+#window {
+    color: @teal;
+}
+
+/* ---- Volume ---- */
+#pulseaudio {
+    color: @purple;
+}
+
+#pulseaudio.muted {
+    color: @border_in;
+}
+
+/* ---- Backlight ---- */
+#backlight {
+    color: @purple_hi;
+}
+
+/* ---- Battery ---- */
+#battery {
+    color: @teal;
+}
+
+#battery.charging {
+    color: @teal_hi;
+}
+
+#battery.warning {
+    color: @gold;
+}
+
+#battery.critical {
+    color: @pink;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: @pink;
+    }
+
+    50% {
+        color: @bg;
+        background: @pink;
+    }
+
+    100% {
+        color: @pink;
+    }
+}
+
+/* ---- Network ---- */
+#network {
+    color: @pink;
+}
+
+#network.disconnected {
+    color: @border_in;
+}
+
+/* ---- Bluetooth ---- */
+#bluetooth {
+    color: @purple;
+}
+
+#bluetooth.connected {
+    color: @purple_hi;
+}
+
+#bluetooth.disabled {
+    color: @border_in;
+}
+
+/* ---- Tray ---- */
+#tray {
+    padding: 0 8px;
+    /*border: 1px solid @pink;*/
+    margin: 3px 2px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background: @pink;
+}
