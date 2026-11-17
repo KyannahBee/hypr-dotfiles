@@ -6,8 +6,8 @@ the baseline. Read it directly; do not copy it into this repo.
 
 ## Repo layout
 
-- `hyprland/` - Hyprland config. `hyprland.conf` is the entry point and it
-  includes the files in `conf/`.
+- `hyprland/` - Hyprland config. `hyprland.lua` is the entry point and it
+  requires the files in `conf/`. Hyprland 0.57 uses the Lua config format.
 - `quickshell/` - the Quickshell shell: `shell.qml`, `modules/`, `services/`,
   `assets/`.
 - `themes/` - one folder per theme. Each theme has a `theme.json` (colors and

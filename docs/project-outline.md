@@ -30,7 +30,7 @@ The live old setup is in `~/dotfiles`; read it there for comparison.
     ├── AGENTS.md
     ├── install.sh
     ├── hyprland/
-    │   ├── hyprland.conf        # entry point, includes conf/*.conf
+    │   ├── hyprland.lua         # entry point, requires conf/*.lua
     │   ├── conf/                # monitors, input, keybinds, windowrules,
     │   │                        # autostart, decoration, animations
     │   └── scripts/
@@ -59,7 +59,8 @@ before you close it.
 ### Phase 1 - Hyprland core
 
 3. Base config: monitors, input devices, environment variables, autostart
-   (polkit, keyring, clipboard watcher, night light, mpris proxy).
+   (polkit, keyring, mpris proxy, quickshell). The clipboard watcher and
+   night light move to the Quickshell shell and the phase 2 theme service.
 4. Port the keybinds from `~/dotfiles/sway/config`: apps, workspaces,
    scratchpad, media keys, screenshots, color picker, lock, reload.
 5. Port window rules: floating dialogs, picture-in-picture, per-app float,
