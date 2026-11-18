@@ -80,6 +80,11 @@ before you close it.
    theme from `~/dotfiles/colorschemes/pixel-castle/` as the first theme.
    Done: themes/pixel-castle/ (issue #8). Style flags match the #7 modern
    layer (blur on, rounding 4); colors and wallpaper are a faithful copy.
+   Decision: the Hyprland Lua config does not read theme.json. The theme
+   service (issue #22, owned by Quickshell) pushes the style flags to
+   Hyprland at runtime with hyprctl keyword and feeds the Quickshell
+   palette. Until #22 lands, conf/decoration.lua keeps the current
+   hardcoded values as startup defaults.
 8. Live theme switcher: one command or one click updates Hyprland colors,
    Quickshell palette, kitty, GTK, cursor, and wallpaper without a restart.
 

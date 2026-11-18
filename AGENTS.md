@@ -51,27 +51,48 @@ the baseline. Read it directly; do not copy it into this repo.
 
 Each theme lives in `themes/<name>/`:
 
-- `theme.json` - colors and style flags:
+- `theme.json` - colors and style flags. The full pixel-castle palette:
 
       {
         "name": "pixel-castle",
         "colors": {
           "bg": "#1a1624",
+          "bg2": "#221d2e",
           "surface": "#2e2640",
           "text": "#e8dff0",
           "subtext": "#a899b8",
           "accent": "#c87fa0",
           "border_active": "#c87fa0",
-          "border_inactive": "#3d3355"
+          "border_inactive": "#3d3355",
+          "purple": "#7b6b9e",
+          "purple_hi": "#a08bc0",
+          "stone": "#c8bfd8",
+          "pink": "#c87fa0",
+          "pink_hi": "#e8a0c0",
+          "pink_active": "#b86c8e",
+          "teal": "#4a9e8a",
+          "teal_hi": "#6ab8a8",
+          "gold": "#c8a060",
+          "water": "#3d4a7a"
         },
         "style": {
           "blur": true,
-          "rounding": 12,
+          "rounding": 4,
           "animations": true
         }
       }
+
+  Required color keys: `bg`, `surface`, `text`, `subtext`, `accent`,
+  `border_active`, `border_inactive`. The other keys are optional extras
+  for Quickshell modules. `accent` and `pink` hold the same value on
+  purpose: `accent` is required by the schema, but `pink` is the real
+  color name from the SwayFX palette. If the two ever differ, `pink`
+  wins.
 
 - `wallpaper.jpg` - the default wallpaper for the theme.
 
 The theme service reads `theme.json` and pushes the colors to Hyprland,
 Quickshell, kitty, and GTK at runtime.
+The `style` flags (blur, rounding, animations) are applied the same way:
+the theme service pushes them to Hyprland at runtime with `hyprctl
+keyword`. The Hyprland Lua config does not read `theme.json`.
