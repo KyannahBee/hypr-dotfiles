@@ -15,10 +15,6 @@ hl.config({
         layout = "dwindle",
     },
 
-    input = {
-        follow_mouse = 1,
-    },
-
     decoration = {
         rounding = 4,
         rounding_power = 2,

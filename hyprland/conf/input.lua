@@ -5,6 +5,8 @@ hl.config({
         kb_layout = "us",
         repeat_delay = 250,
         repeat_rate = 35,
+        -- focus follows mouse (sway: focus_follows_mouse yes)
+        follow_mouse = 1,
         touchpad = {
             natural_scroll = true,
             disable_while_typing = true,
