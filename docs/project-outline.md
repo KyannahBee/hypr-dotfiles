@@ -78,6 +78,8 @@ before you close it.
 
 7. Theme schema (`themes/<name>/theme.json`) and port of the pixel-castle
    theme from `~/dotfiles/colorschemes/pixel-castle/` as the first theme.
+   Done: themes/pixel-castle/ (issue #8). Style flags match the #7 modern
+   layer (blur on, rounding 4); colors and wallpaper are a faithful copy.
 8. Live theme switcher: one command or one click updates Hyprland colors,
    Quickshell palette, kitty, GTK, cursor, and wallpaper without a restart.
 

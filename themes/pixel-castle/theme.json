@@ -1,0 +1,28 @@
+{
+  "name": "pixel-castle",
+  "colors": {
+    "bg": "#1a1624",
+    "bg2": "#221d2e",
+    "surface": "#2e2640",
+    "text": "#e8dff0",
+    "subtext": "#a899b8",
+    "accent": "#c87fa0",
+    "border_active": "#c87fa0",
+    "border_inactive": "#3d3355",
+    "purple": "#7b6b9e",
+    "purple_hi": "#a08bc0",
+    "stone": "#c8bfd8",
+    "pink": "#c87fa0",
+    "pink_hi": "#e8a0c0",
+    "pink_active": "#b86c8e",
+    "teal": "#4a9e8a",
+    "teal_hi": "#6ab8a8",
+    "gold": "#c8a060",
+    "water": "#3d4a7a"
+  },
+  "style": {
+    "blur": true,
+    "rounding": 4,
+    "animations": true
+  }
+}
