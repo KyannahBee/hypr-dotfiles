@@ -38,9 +38,14 @@ the baseline. Read it directly; do not copy it into this repo.
 8. Known unverified: the `hl.dsp.*` dispatcher names in
    `hyprland/conf/keybinds.lua` (for example `hl.dsp.focus({ workspace = ... })`,
    `hl.dsp.window.center()`, `hl.dsp.layout(...)`, `hl.dsp.reload_config()`)
-   are not yet checked against the Hyprland 0.57 Lua API. If `hyprctl reload`
-   reports a config error in that file, check these names first, then confirm
-   the binds with `hyprctl binds`.
+   and the `hl.curve(...)`, `hl.animation(...)`, and `hl.layer_rule(...)`
+   shapes in `hyprland/conf/decoration.lua` parse under
+   `Hyprland --verify-config` but their runtime behavior is not yet checked
+   against the Hyprland 0.57 Lua API. If `hyprctl reload` reports a config
+   error in one of those files, check these names first, then confirm the
+   binds with `hyprctl binds` and the decoration values with
+   `hyprctl getoption decoration:rounding`, `hyprctl getoption decoration:blur`,
+   and `hyprctl getoption animations:enabled`.
 
 ## Theme format
 
