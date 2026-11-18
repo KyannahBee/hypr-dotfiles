@@ -71,6 +71,8 @@ before you close it.
    Special workspace assignments are deferred (no special workspaces yet).
    Done: conf/windowrules.lua (issue #6).
 6. Modern layer: blur, animations, rounded corners, shadows, dimming.
+   Done: conf/decoration.lua (issue #7). Minimal gaps (2/4) and small
+   rounding (4) differ from the swayfx zero-gap pixel look on purpose.
 
 ### Phase 2 - theming engine
 

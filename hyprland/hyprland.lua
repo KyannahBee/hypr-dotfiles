@@ -9,6 +9,4 @@ require("conf.env")
 require("conf.autostart")
 require("conf.keybinds")
 require("conf.windowrules")
-
--- Added by later issues:
--- require("conf.decoration")  (issue #7)
+require("conf.decoration")
