@@ -29,7 +29,7 @@ Singleton {
     FileView {
         path: Qt.resolvedUrl("../themes/active.txt")
         onLoaded: {
-            const name = text.trim()
+            const name = text().trim()
             if (name.length > 0)
                 root.activeTheme = name
         }
@@ -37,6 +37,6 @@ Singleton {
 
     FileView {
         path: Qt.resolvedUrl("../themes/" + root.activeTheme + "/theme.json")
-        onLoaded: root.theme = JSON.parse(text)
+        onLoaded: root.theme = JSON.parse(text())
     }
 }

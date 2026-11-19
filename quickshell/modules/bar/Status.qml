@@ -12,42 +12,72 @@ Item {
         id: icons
         spacing: 10
 
-        Repeater {
-            model: [
-                { glyph: "󰕾", popup: "VolumePopup.qml" },
-                { glyph: "󰃝", popup: "BrightnessPopup.qml" },
-                { glyph: "󰁹", popup: "BatteryPopup.qml" },
-                { glyph: "󰤨", popup: "NetworkPopup.qml" },
-                { glyph: "󰂯", popup: "BluetoothPopup.qml" },
-                { glyph: "󰘔", popup: "AppsPopup.qml" },
-            ]
-            delegate: Text {
-                id: icon
-                required property string glyph
-                required property string popup
-                text: glyph
-                color: Theme.colors.text
-                font.pixelSize: 12
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        const p = loader.item
-                        if (p) p.visible = !p.visible
-                    }
-                }
-
-                Loader {
-                    id: loader
-                    active: false
-                    source: popup
-                    onLoaded: {
-                        item.icon = icon
-                        item.barWindow = root.barWindow
-                        item.visible = true
-                    }
-                }
+        Text {
+            id: volIcon
+            text: "󰕾"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: volumePopup.visible = !volumePopup.visible
+            }
+        }
+        Text {
+            id: brightIcon
+            text: "󰃝"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: brightnessPopup.visible = !brightnessPopup.visible
+            }
+        }
+        Text {
+            id: batIcon
+            text: "󰁹"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: batteryPopup.visible = !batteryPopup.visible
+            }
+        }
+        Text {
+            id: netIcon
+            text: "󰤨"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: networkPopup.visible = !networkPopup.visible
+            }
+        }
+        Text {
+            id: btIcon
+            text: "󰂯"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: bluetoothPopup.visible = !bluetoothPopup.visible
+            }
+        }
+        Text {
+            id: appsIcon
+            text: "󰘔"
+            color: Theme.colors.text
+            font.pixelSize: 12
+            MouseArea {
+                anchors.fill: parent
+                onClicked: appsPopup.visible = !appsPopup.visible
             }
         }
     }
+
+    VolumePopup { id: volumePopup; icon: volIcon; barWindow: root.barWindow }
+    BrightnessPopup { id: brightnessPopup; icon: brightIcon; barWindow: root.barWindow }
+    BatteryPopup { id: batteryPopup; icon: batIcon; barWindow: root.barWindow }
+    NetworkPopup { id: networkPopup; icon: netIcon; barWindow: root.barWindow }
+    BluetoothPopup { id: bluetoothPopup; icon: btIcon; barWindow: root.barWindow }
+    AppsPopup { id: appsPopup; icon: appsIcon; barWindow: root.barWindow }
 }

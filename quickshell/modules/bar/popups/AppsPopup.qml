@@ -1,4 +1,4 @@
-import Quickshell.Services.Hyprland
+import Quickshell.Hyprland
 import QtQuick
 import "../../../services"
 
@@ -14,6 +14,7 @@ PopupWindow {
     anchor.window: barWindow
     anchor.item: icon
     anchor.edges: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
+    anchor.gravity: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
 
     ListView {
         id: list
@@ -27,10 +28,10 @@ PopupWindow {
             color: Theme.colors.text
             font.pixelSize: 11
             elide: Text.ElideRight
-            text: (modelData.class ?? "?") + ": " + (modelData.title ?? "")
+            text: modelData.title ?? ""
             MouseArea {
                 anchors.fill: parent
-                onClicked: Hyprland.focusToplevel(modelData)
+                onClicked: Hyprland.dispatch("focusWindow address:" + modelData.address)
             }
         }
     }

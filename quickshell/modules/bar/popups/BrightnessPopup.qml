@@ -17,12 +17,13 @@ PopupWindow {
     anchor.window: barWindow
     anchor.item: icon
     anchor.edges: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
+    anchor.gravity: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
 
     property int current: 50
 
     Process {
         id: read
-        command: ["sh", "-c", "c=$(brightnessctl get); m=$(brightnessctl max); echo $((c * 100 / m))"]
+        command: "sh -c 'c=$(brightnessctl get); m=$(brightnessctl max); echo $((c * 100 / m))'"
         running: root.visible
         stdout: StdioCollector {
             onStreamFinished: root.current = parseInt(text.trim()) || 50
@@ -31,7 +32,7 @@ PopupWindow {
 
     Process {
         id: write
-        command: ["brightnessctl", "set", root.current + "%"]
+        command: "brightnessctl set " + root.current + "%"
         running: false
     }
 
@@ -45,8 +46,7 @@ PopupWindow {
             value: root.current
             onMoved: {
                 root.current = Math.round(value)
-                write.command = ["brightnessctl", "set", root.current + "%"]
-                write.start()
+                write.startDetached()
             }
         }
         Text { color: Theme.colors.text; text: root.current + "%" }

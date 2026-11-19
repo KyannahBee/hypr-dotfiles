@@ -1,4 +1,4 @@
-import Quickshell.Services.Hyprland
+import Quickshell.Hyprland
 import QtQuick
 import "../../services"
 
@@ -13,22 +13,22 @@ Row {
             width: 22
             height: Theme.barHeight - 12
             radius: 4
-            color: Hyprland.activeWorkspace?.id === index + 1
+            color: Hyprland.focusedWorkspace?.id === index + 1
                    ? Theme.withAlpha(Theme.colors.pink, 0.8) : "transparent"
 
             Text {
                 anchors.centerIn: parent
                 text: ws.index + 1
                 font.pixelSize: 11
-                color: Hyprland.activeWorkspace?.id === ws.index + 1
+                color: Hyprland.focusedWorkspace?.id === ws.index + 1
                        ? Theme.colors.bg : Theme.colors.text
             }
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: Hyprland.focusWorkspace(ws.index + 1)
-                onWheel: Hyprland.focusWorkspace(
-                    Hyprland.activeWorkspace.id + (wheel.angleDelta.y > 0 ? -1 : 1))
+                onClicked: Hyprland.dispatch("workspace " + (ws.index + 1))
+                onWheel: Hyprland.dispatch(
+                    wheel.angleDelta.y > 0 ? "workspace e-1" : "workspace e+1")
             }
         }
     }

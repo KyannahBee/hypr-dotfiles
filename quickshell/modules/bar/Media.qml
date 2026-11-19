@@ -28,7 +28,7 @@ Row {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: root.player?.playPause()
+        onClicked: root.player?.togglePlaying()
         onWheel: if (root.player)
             (wheel.angleDelta.y > 0 ? root.player.previous() : root.player.next())
     }

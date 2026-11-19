@@ -4,15 +4,14 @@ import QtQuick
 import QtQuick.Layouts
 import "../../services"
 
-Window {
+WlrLayershell {
     id: bar
-    name: "quickshell" // matches the blur layer_rule in conf/decoration.lua
     visible: true
     color: "transparent"
-
-    WlrLayershell.layer: WlrLayer.Top
-    WlrLayershell.exclusiveZone: Theme.barHeight
-    WlrLayershell.keyboardInteractivity: WlrKeyboardInteractivity.None
+    namespace: "quickshell" // matches the blur layer_rule in conf/decoration.lua
+    layer: WlrLayer.Top
+    keyboardFocus: WlrKeyboardFocus.None
+    exclusiveZone: Theme.barHeight
 
     anchors {
         top: Theme.barPosition === "top"

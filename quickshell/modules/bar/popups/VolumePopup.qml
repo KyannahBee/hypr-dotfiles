@@ -17,6 +17,7 @@ PopupWindow {
     anchor.window: barWindow
     anchor.item: icon
     anchor.edges: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
+    anchor.gravity: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
 
     ColumnLayout {
         anchors.fill: parent
@@ -29,21 +30,21 @@ PopupWindow {
             Slider {
                 Layout.fillWidth: true
                 from: 0; to: 1.5; stepSize: 0.01
-                value: Pipewire.defaultSink?.audio?.volume ?? 0
-                onMoved: if (Pipewire.defaultSink)
-                    Pipewire.defaultSink.audio.volume = value
+                value: Pipewire.defaultAudioSink?.audio?.volume ?? 0
+                onMoved: if (Pipewire.defaultAudioSink)
+                    Pipewire.defaultAudioSink.audio.volume = value
             }
             Text {
                 color: Theme.colors.text
-                text: Math.round((Pipewire.defaultSink?.audio?.volume ?? 0) * 100) + "%"
+                text: Math.round((Pipewire.defaultAudioSink?.audio?.volume ?? 0) * 100) + "%"
             }
         }
 
         CheckBox {
             text: "Mute"
-            checked: Pipewire.defaultSink?.audio?.muted ?? false
-            onToggled: if (Pipewire.defaultSink)
-                Pipewire.defaultSink.audio.muted = checked
+            checked: Pipewire.defaultAudioSink?.audio?.muted ?? false
+            onToggled: if (Pipewire.defaultAudioSink)
+                Pipewire.defaultAudioSink.audio.muted = checked
         }
     }
 }

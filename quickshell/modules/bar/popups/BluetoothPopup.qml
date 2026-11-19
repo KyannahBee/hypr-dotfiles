@@ -14,6 +14,7 @@ PopupWindow {
     anchor.window: barWindow
     anchor.item: icon
     anchor.edges: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
+    anchor.gravity: Theme.barPosition === "top" ? Edges.Bottom : Edges.Top
 
     Text {
         anchors.centerIn: parent
