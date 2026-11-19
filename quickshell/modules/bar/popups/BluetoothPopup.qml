@@ -21,12 +21,12 @@ PopupWindow {
         anchors.centerIn: parent
         color: Theme.colors.text
         font.pixelSize: 12
-        text: Bluetooth.adapter
-              ? (Bluetooth.adapter.enabled ? "󰂱 on, " + Bluetooth.devices.length + " devices" : "󰂲 off")
+        text: Bluetooth.defaultAdapter
+              ? (Bluetooth.defaultAdapter.enabled ? "󰂱 on, " + Bluetooth.devices.values.length + " devices" : "󰂲 off")
               : "no adapter"
         MouseArea {
             anchors.fill: parent
-            onClicked: if (Bluetooth.adapter) Bluetooth.adapter.enabled = !Bluetooth.adapter.enabled
+            onClicked: if (Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.enabled = !Bluetooth.defaultAdapter.enabled
         }
     }
 }
