@@ -1,4 +1,5 @@
-import Quickshell.Services.Bluetooth
+import Quickshell
+import Quickshell.Bluetooth
 import QtQuick
 import "../../../services"
 

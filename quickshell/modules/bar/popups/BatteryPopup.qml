@@ -1,3 +1,4 @@
+import Quickshell
 import Quickshell.Services.UPower
 import QtQuick
 import "../../../services"

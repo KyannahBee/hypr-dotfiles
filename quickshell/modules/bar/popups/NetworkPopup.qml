@@ -1,4 +1,5 @@
-import Quickshell.Services.Networking
+import Quickshell
+import Quickshell.Networking
 import QtQuick
 import "../../../services"
 
