@@ -9,11 +9,16 @@ the baseline. Read it directly; do not copy it into this repo.
 - `hyprland/` - Hyprland config. `hyprland.lua` is the entry point and it
   requires the files in `conf/`. Hyprland 0.57 uses the Lua config format.
 - `quickshell/` - the Quickshell shell: `shell.qml`, `modules/`, `services/`,
-  `assets/`.
-- `themes/` - one folder per theme. Each theme has a `theme.json` (colors and
-  style flags) and a `wallpaper.jpg`.
+  `assets/`. `quickshell/themes` is a symlink to `../themes` so QML reads
+  the active theme with relative paths. `install.sh` links this folder to
+  `~/.config/quickshell/hyprdot` (the name that `qs -c hyprdot` loads).
+- `themes/` - one folder per theme. Each theme has a `theme.json` (colors,
+  style flags, bar block) and a `wallpaper.jpg`. `themes/active.txt` holds
+  the name of the active theme.
 - `docs/` - the project outline and other notes.
-- `install.sh` - links the configs into `~/.config` and lists dependencies.
+- `install.sh` - run once on a new machine. Links `hyprland/` to
+  `~/.config/hypr` and `quickshell/` to `~/.config/quickshell/hyprdot`.
+  The dependency list and README land in issue #16.
 
 ## Working rules
 
@@ -75,6 +80,10 @@ Each theme lives in `themes/<name>/`:
           "gold": "#c8a060",
           "water": "#3d4a7a"
         },
+        "bar": {
+          "position": "top",
+          "height": 28
+        },
         "style": {
           "blur": true,
           "rounding": 4,
@@ -88,6 +97,10 @@ Each theme lives in `themes/<name>/`:
   purpose: `accent` is required by the schema, but `pink` is the real
   color name from the SwayFX palette. If the two ever differ, `pink`
   wins.
+
+  Optional `bar` block for the Quickshell bar: `position` ("top" or
+  "bottom") and `height` in px. Quickshell reads it from the active theme;
+  a later settings menu writes it.
 
 - `wallpaper.jpg` - the default wallpaper for the theme.
 

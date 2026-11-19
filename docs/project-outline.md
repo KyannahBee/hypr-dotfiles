@@ -90,8 +90,12 @@ before you close it.
 
 ### Phase 3 - Quickshell shell
 
-9. Quickshell scaffold plus top bar: workspaces, window title, clock, tray,
-   system stats (port of the modules in `~/dotfiles/waybar/config.jsonc`).
+9. Quickshell scaffold plus bar: workspaces 1-10, media (Mpris), clock,
+   timer, and status modules (volume, brightness, battery, network,
+   bluetooth, active apps) as Quickshell-native popups anchored to each
+   icon. Bar position and height come from the `bar` block in theme.json.
+   In progress (issue #10). install.sh was created here; the dependency
+   list and README land in issue #16.
 10. Dynamic island: a collapsed pill at the top center that expands on click
     with quick actions (theme, wallpaper, brightness, volume, wifi,
     bluetooth, do not disturb).

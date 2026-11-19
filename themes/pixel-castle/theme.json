@@ -20,6 +20,10 @@
     "gold": "#c8a060",
     "water": "#3d4a7a"
   },
+  "bar": {
+    "position": "top",
+    "height": 28
+  },
   "style": {
     "blur": true,
     "rounding": 4,
