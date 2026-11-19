@@ -2,3 +2,6 @@
 *.bak
 .DS_Store
 *.log
+/hyprland.lua
+/hypr
+/.config/
